@@ -1,0 +1,79 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+{% block content %}
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <form action ="register" method = "POST" class="login100-form validate-form">
+                   
+                    {% csrf_token %}
+
+                    <span class="login100-form-title p-b-26">
+                        <img src="{%static "images/logo3.jpg" %}" width = "100" />
+                        <br>
+                        <br>
+                        <h4>STUDENT ATTENDANCE SYSTEM</h4>
+                        <h6>New Student Registration</h6>
+                        <p> <em> Provide your details to Register </em> </p>
+                        <hr>
+                    </span>
+                     {% include 'partials/_messages.html' %}
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter FullName">
+                        <input class="input100" type="text" name="username">
+                        <span class="focus-input100" data-placeholder="FullName (Surname, Firstname, Middlename)"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter valid Email">
+                        <input class="input100" type="email" name="email">
+                        <span class="focus-input100" data-placeholder="Email"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter Department">
+                        <input class="input100" type="text" name="first_name">
+                        <span class="focus-input100" data-placeholder="Department"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter Matric Number">
+                        <input class="input100" type="text" name="last_name">
+                        <span class="focus-input100" data-placeholder="Matriculation Number"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter password">
+                        <input class="input100" type="password" name="password">
+                        <span class="focus-input100" data-placeholder="Password"></span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Confirm password">
+                        <!-- <span class="btn-show-pass">
+                            <i class="zmdi zmdi-eye"></i>
+                        </span> -->
+                        <input class="input100" type="password" name="confirm_password">
+                        <span class="focus-input100" data-placeholder=" Confirm Password"></span>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button class="login100-form-btn">
+                                Register
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="text-center p-t-30">
+                        <span class="txt1">
+                        Registered Student?
+                        </span>
+
+                        <a class="txt2" href="{% url "login" %}">
+                           Sign In
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="dropDownSelect1"></div>
+{% endblock %}

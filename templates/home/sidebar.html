@@ -1,0 +1,88 @@
+{% load static %}
+{% block content %}
+<style>
+.edit{
+    {% comment %} background: maroon; {% endcomment %}
+    background: #2e3336;
+    border-color:#2e3336;
+    box-shadow:none;
+}
+
+.edit:hover{
+    background: #2e3336;
+    border-color: white;
+}
+
+.history{
+    background: #2e3336;
+    border-color:#2e3336;
+    box-shadow:none;
+}
+
+.history:hover{
+    background: #2e3336;
+    border-color: none;
+}
+
+.text_color{
+    color:white;
+}
+</style>
+            <nav class="edit sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+
+                 <li class="nav-item">
+                    <a class="nav-link" href="">
+                        <i class="ti-dashboard menu-icon"></i>
+                        <span class="menu-title">Dashboard</span>
+                    </a>
+                </li>
+                {% comment %} <li class="nav-item">
+                    <a class="nav-link" href="">
+                        <i class="ti-write menu-icon"></i>
+                        <span class="menu-title">Submit Attendance</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="">
+                        <i class="ti-file menu-icon"></i>
+                        <span class="menu-title">Attendance History</span>
+                    </a>
+                </li> {% endcomment %}
+                {% comment %} <li class="nav-item">
+                    <a class="nav-link" href="{% url 'change_password' %}">
+                        <i class="ti-key menu-icon"></i>
+                        <span class="menu-title"> Change Password</span>
+                    </a>
+                </li> {% endcomment %}
+                 <li class="edit nav-item">
+                <a class="edit nav-link" data-bs-toggle="collapse" href="#ui-basic"  aria-expanded="false"
+                    aria-controls="ui-basic">
+                    <i class="ti-write menu-icon"></i>
+                    <span class=" menu-title">Attendance</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="collapse" id="ui-basic">
+                    <ul class=" nav flex-column sub-menu"> 
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'attendance' %}">
+                            Submit Attendance</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'attendance_history' %}">
+                            Attendance History</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">
+                        <i class="ti-power-off menu-icon"></i>
+                        <span class="menu-title"> Logout</span>
+                    </a>
+                </li>
+            </ul>
+            
+        </nav>
+{% endblock %}

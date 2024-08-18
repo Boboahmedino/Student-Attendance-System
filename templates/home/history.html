@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+<div class="container-fluid page-body-wrapper">
+{% include 'home/sidebar.html' %}
+        <div class="main-panel">
+            <div class="history content-wrapper">
+                <div class="history row">
+                    <div class="col-md-12 grid-margin">
+                        {% comment %} <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                               <h4 class="card card-body card-title">LASU-SAS Dashboard</h4>
+                            </div>
+                        </div> {% endcomment %}
+                    </div>
+                </div>
+                 <div class="row">
+                    <div class="col-md-12 grid-margin">
+                                <div>
+                                    <a href = "">
+                                        <button type="button" class="btn btn-primary btn-icon-text btn-rounded">
+                                            <i class="ti-clipboard btn-icon-prepend"></i>Report
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                                                
+                        <div class="col-md-9 grid-margin stretch-card">
+
+                            <div class="history card">
+                            {% include 'partials/_messages.html' %}
+
+                            <div class="card-body">
+                                    <p class="card-title mb-0">Attendance History</p>
+                                    <div class="table-responsive">
+                                        <table class="table ">
+                                            <thead>
+                                                <tr>
+                                                    <th class = "text_color" >LEVEL</th>
+                                                    <th class = "text_color" >COURSE</th>
+                                                    <th class = "text_color" >STATUS</th>
+                                                    <th class = "text_color" >DATE / TIME</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for history in histories %}
+                                                <tr>
+                                                    <td class = "text_color">{{history.level}}</td>
+                                                    <td class = "text_color">{{history.course}}</td>
+                                                    <td class = "text_color">{{history.category}}</td>
+                                                    <td class = "text_color">{{history.datetime}}</td>
+                                                </tr>
+                                               {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                     
+                        </div>
+                        
+                    </div>
+
+         
+            
+            
+            
+            
+                </div>
+
+                    
+        </div>
+    </div>
+
+{% endblock %}

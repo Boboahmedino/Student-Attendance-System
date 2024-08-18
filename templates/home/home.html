@@ -1,0 +1,58 @@
+{% extends 'base_home.html' %}
+{% load static %}
+{% block content %}
+  
+<style>
+
+body{
+  background: linear-gradient(black, #21d4fd, #21d4fd, black);
+}
+.in{
+    color: white;
+    background-color: Maroon;
+    border-color: Maroon
+}
+    color: white;
+.in:hover{
+    background-color: brown;
+    border-color:  brown;
+}
+
+.out{
+    color: white;
+    background-color:  indigo;
+    border-color:  indigo
+}
+.out:hover{
+    background-color: purple;
+    border-color:  purple;
+
+}
+</style>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<center> <img src="{%static "images/logo3.jpg" %}"  width = "100"/> <center>
+<center> <h1> Lagos State University Student Attendance System</h1> </center>
+<center> <h2> Department of Computer Science </h2> </center>
+<center> <h6> <em> A platform that reduces the manual use of Paper Attendance for Students <em/> </h6> </center>
+
+
+
+    <center>
+       <a href = "{% url 'register' %}"> <button type="submit" class="btn btn-primary out me-2">Sign Up</button> </a>
+       <a href = "{% url 'login' %}"> <button type="submit" class="btn btn-primary in me-2">Sign In</button> </a>
+    </center>
+                                        
+<center>  </center>
+
+
+{% endblock %}
+
+
+
